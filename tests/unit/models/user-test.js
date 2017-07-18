@@ -1,12 +1,14 @@
 import { moduleForModel, test } from 'ember-qunit';
-
+import Ember from 'ember';
 moduleForModel('user', 'Unit | Model | user', {
-  // Specify the other units that are required for this test.
-  needs: []
 });
 
-test('it exists', function(assert) {
-  let model = this.subject();
-  // let store = this.store();
-  assert.ok(!!model);
+test('should return correct compute', function(assert) {
+  const userModel = this.subject();
+  Ember.run(()=> {
+    userModel.set('name', 'Andrew');
+    userModel.set('age', 12);
+  })
+
+  assert.equal(userModel.get('nameWithAge'), 'Andrew is 12 years old')
 });
