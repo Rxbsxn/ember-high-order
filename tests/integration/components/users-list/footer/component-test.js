@@ -1,25 +1,25 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('users-list/footer', 'Integration | Component | users list/footer', {
+
+moduleForComponent('users-list/footer', 'Integration | Component | users list footer', {
   integration: true
 });
 
-test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+test('it renders without text', function(assert) {
+  // // Set any properties with this.set('myProperty', 'value');
+  // // Handle any actions with this.on('myAction', function(val) { ... });
 
   this.render(hbs`{{users-list/footer}}`);
 
   assert.equal(this.$().text().trim(), '');
+});
 
-  // Template block usage:
-  this.render(hbs`
-    {{#users-list/footer}}
-      template block text
-    {{/users-list/footer}}
-  `);
+test('it renders with text', function(assert) {
+    this.render(hbs`{{#users-list/footer}}
+        Hello from component
+        {{/users-list/footer}}
+    `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.equal(this.$().text().trim(), 'Hello from component')
 });
