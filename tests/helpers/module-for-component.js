@@ -4,8 +4,8 @@ import { startMirage } from 'high-order/initializers/ember-cli-mirage';
 
 const { RSVP: { resolve } } = Ember;
 
-export default function(name, options = {}) {
-  moduleForComponent(name, {
+export default function(name, description, options = {}) {
+  moduleForComponent(name, description, {
     integration: true,
 
     beforeEach() {
