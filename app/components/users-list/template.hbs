@@ -1,0 +1,6 @@
+{{#each users as |user|}}
+    {{yield (hash
+        header=(component 'users-list/header')
+    )}}
+    <p>{{user.name}}</p>
+{{/each}}
