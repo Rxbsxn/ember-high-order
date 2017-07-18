@@ -1,6 +1,8 @@
 {{#users-list users=model as |usr|}}
-    {{usr.header "Hello"}}
-    {{#usr.footer}}
-        I call you User
-    {{/usr.footer}}
+        {{usr.header "Hello"}}
+        {{usr.details.name}}
+        {{#usr.footer}}
+            I call you User
+        {{/usr.footer}}
 {{/users-list}}
+

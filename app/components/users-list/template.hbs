@@ -1,7 +1,9 @@
 {{#each users as |user|}}
+<p>
     {{yield (hash
         header=(component 'users-list/header')
+        details=user
         footer=(component 'users-list/footer')
     )}}
-    <p>{{user.name}}</p>
+</p>
 {{/each}}
